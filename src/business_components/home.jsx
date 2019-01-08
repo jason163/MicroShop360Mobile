@@ -97,27 +97,27 @@ class HomeNavList extends React.Component{
                     <li><a onClick={()=>{
                         this.context.router.push({pathname:"/infoList/1"});
                     }}><img src={require("assets/img/nav_icon1.png")}/>
-                        <p>公司动态</p></a>
+                        <p>动&nbsp;&nbsp;态</p></a>
                     </li>
                     <li><a onClick={()=>{
                         this.context.router.push({pathname:"/infoList/2",state: {target:"/"}});
                     }}><img src={require("assets/img/nav_icon2.png")}/>
-                        <p>美容资讯</p></a>
+                        <p>养&nbsp;&nbsp;生</p></a>
                     </li>
                     <li><a onClick={()=>{
                         this.context.router.push({pathname:"/infoList/3",state: {target:"/"}});
                     }}><img src={require("assets/img/nav_icon3.png")}/>
-                        <p>养&nbsp;&nbsp;生</p></a>
+                        <p>美&nbsp;&nbsp;容</p></a>
                     </li>
                     <li><a onClick={()=>{
                         this.context.router.push({pathname:"/infoList/4",state: {target:"/"}});
                     }}><img src={require("assets/img/nav_icon4.png")}/>
-                        <p>促销信息</p></a>
+                        <p>促&nbsp;&nbsp;销</p></a>
                     </li>
                     <li><a onClick={()=>{
                         this.context.router.push({pathname:"/infoList/5",state: {target:"/"}});
                     }}><img src={require("assets/img/nav_icon5.png")}/>
-                        <p>活动信息</p></a>
+                        <p>活&nbsp;&nbsp;动</p></a>
                     </li>
                     <li><a onClick={()=>{
                         this.context.router.push({pathname:"/infoList/6",state: {target:"/"}});

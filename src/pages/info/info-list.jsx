@@ -62,15 +62,15 @@ export class InfoIndex extends React.Component {
         let header = "文章列表";
         let type = this.props.params.type;
         if(type==="1"){
-            header="公司动态";
+            header="动   态";
         }else if(type==="2"){
-            header="美容资讯";
-        }else if(type==="3"){
             header="养    生";
+        }else if(type==="3"){
+            header="美    容";
         }else if(type==="4"){
-            header="促销信息";
+            header="促    销";
         }else if(type==="5"){
-            header="活动信息";
+            header="活    动";
         }else if(type==="6"){
             header="私人定制";
         }

@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+/* form 表单样式 */
+    /* form 表单基础样式 */
+.form{ padding: 0 10px; width: 100%;}
+.form form{ display: block; font-size: 14px; width: 100%;}
+.form p{ background: #fff; border: solid 1px #ddd; display: block; height: 42px; margin-bottom: 10px; overflow: hidden; padding: 8px 10px; position: relative; width: 100%;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+.form p.p-i{ margin-bottom: 5px;}
+.form em{ color: #a4a4a4; display: block; font-size: 10px; margin-bottom: 10px; padding: 10px 0; text-align: center;}
+.form p label:first-child{ display: block; height: 24px; line-height: 24px; overflow: hidden; width: 78px;}
+.form p input[type="text"],
+.form p input[placeholder]{ background: #fff; color: #292929; display: block; font-size: 14px; height: 24px; line-height: 24px; overflow: hidden; width: 100%;}
+.form .radioBox{ display: block; padding-left: 88px; height:20px; margin-top: -10px; position: absolute;left:0;top:50%; width: 100%;}
+.form .selectBox{ display: block; padding-left: 88px; height: 30px; margin-top: -15px; position: absolute;left:0;top:50%; width: 100%;}
+.form .selectBox select{ height: 100%; margin: 0 0%; width: 100%;
+-webkit-background-size: 10px auto;
+background-size: 10px auto;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+border: none;
+}
+.form .selectBox .col{ display: block; padding-right: 18px; position: relative; height: 100%;}
+.form .selectBox .col:after{ border-left: solid 4px transparent; border-right: solid 4px transparent; border-top: solid 6px #999; content: ""; margin-top: -3px; overflow: hidden; position: absolute;right:10px;top:50%;
+}
+.form .selectBox select option{ }
+.form p input[type="submit"]{ background-color: #D90B0B; color: #fff; display: inline-block; font-size: 19px; height: 44px; line-height: 44px; width: 100%;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+.form p input[type="radio"]{  background-color: #fff; border: solid 1px #bdbdbd; height: 12px; width: 12px;
+/*-webkit-appearance: radio;
+-moz-appearance: radio;
+appearance: radio;*/
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+.form p input[type="radio"]:before{ background-color: #bdbdbd; content: ""; display: block; height: 4px; margin: 3px 0 0 3px; width: 4px;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+}
+.form p input[type="radio"].on{ background-color: #e10005;  border: solid 1px #e10005; height: 12px; width: 12px;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+.form p input[type="radio"].on:before{ background-color: #fff; content: ""; display: block; height: 4px; margin: 3px 0 0 3px; width: 4px;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+}
+.form p input[type="radio"]+label{ display: inline-block; padding: 0 30px 0 4px;}
+.form em.error{ color: #D90B0B; padding: 0 10px; text-align: left;}
+
+.form p.checkboxOuter{ background: none; border: none; padding: 10px 0; height: auto;}
+.form p.checkboxOuter i.checkbox{ background-color: #bbb; display: inline-block; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: -2px; width: 16px;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+border-radius: 50%;
+}
+.form p.checkboxOuter i.checkbox:before{ border-left: solid 1px #fff; border-bottom: solid 1px #fff; content: ""; display: block; height: 5px; margin: 3px 0 0 3px; width: 9px;
+-webkit-transform: rotate( -45deg);
+-moz-transform: rotate( -45deg);
+-ms-transform: rotate( -45deg);
+-o-transform: rotate( -45deg);
+transform: rotate( -45deg);
+}
+.form p.checkboxOuter i.checkbox.on{ background-color: #D90B0B;}
+
+.form .formYzm{ padding-right: 9em;}
+.form .formYzm input[type="text"]{}
+.form .formYzm .formYzmBtn{ background-color: #f53636; color: #fff; display: block; height: 42px; line-height: 42px; margin-top: -21px; position: absolute;right:0;top:50%; text-align: center; width:8em;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+
+.form p.btn{ border: none; background: transparent; height: auto; text-align: center; padding: 8px 0;}
+.form p.btn a{ background-color: #D90B0B; color: #fff; display: inline-block; font-size: 19px; height: 44px; line-height: 44px; width: 100%;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+.form p.validFail{ border-color: #F86969;}
+/*表单 end*/

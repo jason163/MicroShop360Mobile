@@ -1,0 +1,16 @@
+{
+  "token":"token",
+  "cookieName":"match_customer_auth",
+  "tabPageActive":"TAB_PAGE_LAYOUT_ACTIVE",
+  "guide":"$guide",
+  "isWorker":"isWorker",
+  "previousRouteState":"ROUTE_PREVIOUS_STATE",
+  "previousRoutePathname":"ROUTE_PREVIOUS_PATHNAME",
+  "runtime":"$runtime",
+  "ShoppingCartCookie":"match_shoppingcart_productlist",
+  "homePageCacheKey":"home_ck",
+  "identity":"identity",
+  "register":"register",
+  "orderListTabActive":"ORDER_LIST_TAB_ACTIVE",
+  "CommentUserful":"PRO_COMMENT_USEFUL"
+}

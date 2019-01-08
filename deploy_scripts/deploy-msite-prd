@@ -1,0 +1,14 @@
+#!/bin/sh
+#upgrade debug version
+node ./build_scripts/upgrade-version.js
+git commit -am "update debug version success"
+
+#build html5
+export NODE_ENV=production
+webpack --progress --profile --colors
+
+#upload
+node ../react/build_scripts/deploy.js --type=msite
+
+#git status
+#git commit -am "deploy msite success"

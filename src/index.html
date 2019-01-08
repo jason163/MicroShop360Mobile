@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <title>四季美</title>
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?83e73580333f4ae3626b37ab4f8a97e9";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="rootNode"></div>
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% } %>
+<script>
+    var b = document.documentElement;
+    b.setAttribute('data-useragent',  navigator.userAgent);
+    b.setAttribute('data-platform', navigator.platform );
+    b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
+</script>
+<% if(htmlWebpackPlugin.options.debug) { %>
+
+<% } %>
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿@charset "utf-8";
+
+/* reset */
+
+/* 首页头部 */
+#main_header{ height: 44px; padding: 6px 0; position: absolute;left: 0;top: 0; width: 100%; z-index: 2;}
+#main_header .main_header_bg{ background-color: #D90B0B; height: 100%; overflow: hidden; opacity: 0; position: absolute;left:0;top:0; z-index: 1; width: 100%;}
+#main_header .layout{ height: 100%; overflow: hidden; position: relative; width: 100%; z-index: 2;}
+#main_header .logo{ height: 100%; overflow: hidden; position: absolute;left:0;top:0; text-align: center; width: 80px; z-index: 3;}
+#main_header .logo a{ display: inline-block; height: 100%;}
+#main_header .logo a img{ display: block; height: 100%;}
+#main_header .search{ height: 100%; padding: 0 48px 0 80px; position: relative; width: 100%; z-index: 1;}
+#main_header .search p{ background: url(../img/ico_searchbox.png) no-repeat 10px center #fff; height: 100%; overflow: hidden; padding: 3px 30px 3px 36px; position: relative; width: 100%;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+-webkit-background-size: 16px auto;
+background-size: 16px auto;
+}
+#main_header i.clearText{ background: url(../img/ico_cleartext.png) no-repeat center center; color: #fff; display: none; font-family: arial; height: 24px; margin-top: -12px; overflow: hidden; position: absolute;right: 4px;top:50%; width: 24px; z-index: 2;
+-moz-opacity: 0.15;
+opacity: 0.15;
+-webkit-background-size: 16px auto;
+background-size: 16px auto;
+}
+#main_header i.clearText.on{ display: block;}
+
+#main_header .search p input{ font-size: 12px; height: 100%; line-height: 28px; overflow: hidden; position: relative; width: 100%; z-index: 1;}
+#main_header .login{ font-size: 14px; height: 100%; line-height: 34px; overflow: hidden; position: absolute;right:0;top:0; text-align: center; width:48px; z-index: 2;}
+#main_header .login a{ color: #fff; display: inline-block; height: 100%; padding: 0 5px;}
+#main_header .login a.pre{ background: url(../img/ico_pre.png) center center no-repeat; width: 32px;
+-webkit-background-size: 18px auto;
+background-size: 18px auto;} 
+
+
+/* 首页banner */
+.main_banner .img{ padding-bottom:52%;}
+
+
+/* 掌上抢购 */
+.flash_sale{}
+.flash_sale .hd_withIcon i{ background-image: url(../img/ico_time.png); width: 16px;}
+.flash_sale .bd{ width: 100%;}
+.flash_sale .bd ul{ display: block; width: 100%;}
+.flash_sale .bd li{ background-color: #fff; float: left; padding: 5px 10px; position: relative; width: 100%;}
+.flash_sale .bd li:after{ background-color: #ddd; content: ""; height: 1px; position: absolute;left: 0;bottom:0; width: 100%;
+-webkit-transform: scaleY(.5);
+-moz-transform: scaleY(.5);
+-ms-transform: scaleY(.5);
+-o-transform: scaleY(.5);
+transform: scaleY(.5);
+}
+.flash_sale .bd li .con-l{ background-repeat: no-repeat; background-position: center; float: left; height: 100px; position: relative; width: 100px; z-index: 2;
+-webkit-background-size: cover;
+background-size: cover;
+}
+.flash_sale .bd li .con-r{ height: 100px; padding-left: 110px; position: relative; width: 100%; z-index: 1;}
+.flash_sale .bd li .con-r .btn1{ background-color: #f53636; color: #fff; font-size: 13px; height: 22px; line-height: 24px; overflow: hidden; padding: 0 6px; position: absolute; right: 5px; bottom: 7px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+.flash_sale .bd li .timer-out{ color: #292929; display: block; line-height: 12px; padding-top: 5px;}
+.flash_sale .bd li .timer-out:before{ background: url(../img/ico_timer.png) no-repeat; display: inline-block; content: ""; height: 18px; vertical-align: middle; width: 16px;
+ -webkit-background-size: 14px auto;
+ background-size: 14px auto;
+}
+.flash_sale .bd li .timer{ color: #d90b0b; display: inline-block; font-size: 10px; padding-left: 1px; padding-bottom: 4px; text-align: center; vertical-align: middle;}
+.flash_sale .bd li .timer i{ background-color: #f86969; color: #fff; display: inline-block; font-size: 10px; line-height:10px; padding: 2px 3px; margin: 0 2px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+.flash_sale .bd li .con-tt{ height: 36px; line-height: 18px; overflow:hidden; margin: 2px 0; }
+.flash_sale .bd li .con-price{}
+.flash_sale .bd li .con-price em{ color: #D90B0B; display: block; font-size: 16px; line-height: 18px;}
+.flash_sale .bd li .con-price em:before{ content: "￥"; font-size: .86em;}
+.flash_sale .bd li .con-price del{ color: #666; display: block; font-size: 12px; line-height: 16px; text-decoration: line-through;}
+.flash_sale .bd li .con-price del:before{ content: "￥"; font-size: .86em;}
+
+
+
+
+
+

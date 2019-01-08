@@ -1,0 +1,59 @@
+@charset "utf-8";
+/*错误页面*/
+.errorpage{position: fixed; height: 100%;}
+.errorpage_con{ width:250px;margin: auto; overflow: hidden;height: 316px;
+position: fixed;
+  left: 50%;
+  top: 50%;  
+  margin: -158px 0 0 -125px;
+}
+.errorpage_con img{ width: 100%; display: block;}
+.errorpage_con .text{ position: absolute;bottom: 66px; left: 125px; line-height:26px; color: #999;}
+.error_link{ text-align: center;}
+.error_link a{ margin:30px 10px; position: relative; background-color: #f9f9f9; padding:0px 20px; height: 36px; line-height: 36px; display: inline-block;}
+.error_link a i{ width: 16px; height: 16px; display: inline-block;vertical-align: -3px; margin-right: 5px;
+}
+.error_link a.e_refresh i{  background-image: url(../img/e_refresh.png); -webkit-background-size: 16px 16px;
+background-size: 16px 16px; }
+.error_link a.e_return i{ position: relative;}
+.error_link a.e_return i:after{
+  border-bottom: solid 1px #999;
+  border-left: solid 1px #999;
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  top: 0px;
+  left: 0px;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);}
+.error_link a:after{ position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  right: -100%;
+  bottom: -100%;
+  -webkit-transform: scale(.5);
+  -moz-transform: scale(.5);
+  -ms-transform: scale(.5);
+  -o-transform: scale(.5);
+  transform: scale(.5);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #999; 
+  }

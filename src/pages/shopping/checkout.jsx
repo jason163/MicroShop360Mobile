@@ -544,20 +544,20 @@ export default class CheckoutPage extends React.Component {
                     })
                 }
 
-                <div className="box-line-b box-line-t mb5" id="invoiceContainer">
-                    <a className="checkout_item">
-                        <p className="p_text">
-                            <span className="right_tit">发票抬头：</span>
-                            <input className="checkout_text" type="text" placeholder="选填，发票抬头" maxLength="60"
-                                   value={this.state.OrderCreateInfo.InvoiceHeader}
-                                   onChange={(e)=>{ this.invoiceHeader=e.target.value; }}
-                                   onKeyUp={(e)=>{ if(e.target.value.length>60)
-                                    {
-                                        e.target.value=e.target.value.substr(0,60);
-                                    }}}/>
-                        </p>
-                    </a>
-                </div>
+                {/*<div className="box-line-b box-line-t mb5" id="invoiceContainer">*/}
+                    {/*<a className="checkout_item">*/}
+                        {/*<p className="p_text">*/}
+                            {/*<span className="right_tit">发票抬头：</span>*/}
+                            {/*<input className="checkout_text" type="text" placeholder="选填，发票抬头" maxLength="60"*/}
+                                   {/*value={this.state.OrderCreateInfo.InvoiceHeader}*/}
+                                   {/*onChange={(e)=>{ this.invoiceHeader=e.target.value; }}*/}
+                                   {/*onKeyUp={(e)=>{ if(e.target.value.length>60)*/}
+                                    {/*{*/}
+                                        {/*e.target.value=e.target.value.substr(0,60);*/}
+                                    {/*}}}/>*/}
+                        {/*</p>*/}
+                    {/*</a>*/}
+                {/*</div>*/}
 
 
                 <div className="box-line-b box-line-t mb5">

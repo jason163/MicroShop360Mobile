@@ -99,7 +99,8 @@ border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
 }
-.flash_sale .bd li .con-tt{ height: 36px; line-height: 18px; overflow:hidden; margin: 2px 0; }
+.flash_sale .bd li .con-tt{ line-height: 18px; overflow:hidden; margin: 2px 0; }
+.flash_sale .bd li .con-pt{ height: 20px; line-height: 22px; overflow:hidden; text-overflow: ellipsis; color: #ff4f73;font-size: 12px; white-space: nowrap; margin: 2px 0; }
 .flash_sale .bd li .con-price{}
 .flash_sale .bd li .con-price em{ color: #ff4f73; display: block; font-size: 16px; line-height: 18px;}
 .flash_sale .bd li .con-price em:before{ content: "￥"; font-size: .86em;}

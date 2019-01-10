@@ -68,9 +68,9 @@ export class InfoIndex extends React.Component {
         }else if(type==="3"){
             header="美    容";
         }else if(type==="4"){
-            header="促    销";
+            header="享    利";
         }else if(type==="5"){
-            header="活    动";
+            header="有    約";
         }else if(type==="6"){
             header="私人定制";
         }

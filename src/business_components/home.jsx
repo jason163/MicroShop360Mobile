@@ -112,12 +112,12 @@ class HomeNavList extends React.Component{
                     <li><a onClick={()=>{
                         this.context.router.push({pathname:"/infoList/4",state: {target:"/"}});
                     }}><img src={require("assets/img/nav_icon4.png")}/>
-                        <p>促&nbsp;&nbsp;销</p></a>
+                        <p>享&nbsp;&nbsp;利</p></a>
                     </li>
                     <li><a onClick={()=>{
                         this.context.router.push({pathname:"/infoList/5",state: {target:"/"}});
                     }}><img src={require("assets/img/nav_icon5.png")}/>
-                        <p>活&nbsp;&nbsp;动</p></a>
+                        <p>有&nbsp;&nbsp;約</p></a>
                     </li>
                     <li><a onClick={()=>{
                         this.context.router.push({pathname:"/infoList/6",state: {target:"/"}});

@@ -49,6 +49,7 @@ export default class CountdownItem extends React.Component {
                     <a className={`btn1 ${timeout===0||isSoldOut===1?" graybg":""}`}>{textContent}</a>
                     <div className="timer-out"><Countdown timeoutCallback={()=>{this.timeout()}} leftSeconds={timeout}></Countdown></div>
                     <div className="con-tt">{this.props.data.ProductName}</div>
+                    <div className="con-pt">{this.props.data.PromotionTitle}</div>
                     <div className="con-price">
                         <em>{this.props.data.CountDownCurrentPrice}</em>
                         <del>{this.props.data.MarketPrice}</del>

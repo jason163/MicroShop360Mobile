@@ -127,6 +127,7 @@ export default class ProductPage extends React.Component {
         let basicInfo = {
             TradeType:this.state.productData.TradeType
             ,ProductName: this.state.productData.ProductName
+            ,CDTitle: this.state.productData.CDTitle
             ,CurrentPrice:this.state.productData.CurrentPrice
             ,MarketPrice:this.state.productData.MarketPrice
             ,CDTime:this.state.productData.CDLeftSeconds

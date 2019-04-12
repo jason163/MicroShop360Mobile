@@ -204,7 +204,7 @@ class ProDetailTitle extends React.Component {
                         {/*<span className="labelred">{this.props.data.TradeType}</span>*/}
                         {this.props.data.ProductName}
                     </p>
-                    <p className="sales_word"></p>
+                    <p className="sales_word">{this.props.data.CDTitle}</p>
                     <p className="price">
                         <span className="mr5"><em>{this.props.data.CurrentPrice}</em></span>
                         <del>￥{this.props.data.MarketPrice}</del>

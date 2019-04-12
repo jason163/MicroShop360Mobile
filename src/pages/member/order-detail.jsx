@@ -132,12 +132,14 @@ export class OrderDetail extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="box-line-b mb5">
+
+                        {/*<div className="box-line-b mb5">
                             <div className="o_details_item box-line-t">
                                 <p className="p_text"><span>发票抬头：</span><span
                                     className="colorGrey">{this.state.order.InvoiceHeader}</span></p>
                             </div>
-                        </div>
+                        </div>*/}
+
                         <div className="box-line-b mb5">
                             <div className="o_details_item box-line-t">
                                 <p className="p_text"><span>买家留言：</span><span

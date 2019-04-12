@@ -36,7 +36,7 @@ class OrderCustomerAddress extends React.Component{
 						container.style.display="block";
 					 }
 					}}>
-					<p><span className="mr10">到店消费</span></p>
+					<p><span className="mr10">消费选择</span></p>
 				</a>
 			);
 		}
@@ -150,7 +150,7 @@ class OrderCustomerAddress extends React.Component{
 			}
 
 			contentElement=<div className="c_address_list">
-               <div className="address_item mb5 box-line-b box-line-t pb10">
+               {/*<div className="address_item mb5 box-line-b box-line-t pb10">
 				   <p onClick={()=>{				
 										if(this.props.onSelected!==null) {
 											let container = document.getElementById("receiverAddressContainer");
@@ -160,7 +160,7 @@ class OrderCustomerAddress extends React.Component{
 									}
 								}><span className="mr10 colorGrey">到店消费</span>
 				   </p>
-			   </div>
+			   </div>*/}
 				{this.props.receiveAddressList.map((address,index)=>{
 					return <div key={index} className="address_item mb5 box-line-b box-line-t pb10">
 						<p onClick={()=>{					

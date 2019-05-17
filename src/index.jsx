@@ -13,6 +13,7 @@ import appConfig from "config/app.config.json";
 import Loading from "components/loading.jsx";
 import ConfirmBox from "components/confirmbox.jsx"
 import * as handler from "utility/handler.jsx";
+import reactCookie from "utility/react-cookie.js";
 
 let runtime = appConfig.runtime;
 handler.runtime(runtime);

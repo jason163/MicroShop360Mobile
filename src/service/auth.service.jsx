@@ -35,11 +35,12 @@ class Auth {
             });
         }
 
-        /*let openid = reactCookie.load("match.weixin.openid");
+        let openid = reactCookie.load("match.weixin.openid");
         if(!Object.is(openid,undefined)&&!Object.is(openid,null)&&!Object.is(openid,""))
         {
             user.openID=openid;
-        }*/
+        }
+
         return client.post("/Common/Login", user).then((res)=> {
             if (res.body.Success) {
                 //登录成功后清除之前的用于判断是否是认证用户的缓存
@@ -65,6 +66,7 @@ class Auth {
     }
 
     logout() {
+        debugger;
         cache.removeCache(keys.token);
         cache.removeSessionCache(keys.tabPageActive);
         cache.removeSessionCache(keys.previousRoutePathname);

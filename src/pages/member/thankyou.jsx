@@ -151,8 +151,7 @@ export default class Thankyou extends React.Component {
    }
 
     renderWechatPayType(){
-        <p>wechat</p>
-       if(clientType.isWechat||clientType.isPhone||clientType.isAndorid )
+       if(clientType.isWechat)
        {
            return (
                <li className="weixin"><a onClick={()=>{
@@ -183,15 +182,16 @@ export default class Thankyou extends React.Component {
                     this.payClick(110)
                 }}>支付宝支付</a></li>
             )
-        }else if(clientType.isWechat){
+        }
+        if(clientType.isWechat){
             return (
                 <li className="weixin"><a onClick={()=>{
                     this.payClick(111)
                 }}>微信支付</a></li>
             )
-        }else {
-            return null;
         }
+
+        return null;
     }
 
     componentDidMount() {
@@ -227,7 +227,8 @@ export default class Thankyou extends React.Component {
                                 pathname: `/mine/orderdetail/${this.state.order.SysNo}`
                             });
                     }}>{this.state.order.SysNo}</span>）金额</b><b className="colorRed fr">￥{this.state.order.CashPayAbleAmount}</b></li>
-                        {this.renderPayTypes()}
+                        {this.renderWechatPayType()}
+                        {this.renderAliPayType()}
                     </ul>
                     </section>
             </PageLayout>

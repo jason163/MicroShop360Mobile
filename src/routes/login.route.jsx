@@ -4,7 +4,6 @@ import * as Cache from "utility/storage.jsx";
 import clinetType from "utility/handler.jsx";
 import keys from "config/keys.config.json";
 import appConfig from "config/app.config.json";
-import reactCookie from "utility/react-cookie.js";
 
 export default {
     path: ""
@@ -12,15 +11,16 @@ export default {
         {
             path: "login"
             , onEnter(routers, replace, callback){
-            /*let openid = reactCookie.load("match.weixin.openid");
+            debugger;
+            let openid = window.reactCookie.load("match.weixin.openid");
             if (clinetType.isWechat&&(Object.is(openid,undefined)||Object.is(openid,null)||Object.is(openid,""))) {
                 let returnurl=appConfig.mhost;
                 if(!Object.is(routers.location.state,null)&&!Object.is(routers.location.state.target,undefined)&&!Object.is(routers.location.state.target,null)&&!Object.is(routers.location.state.target,""))
                 {
-                    document.location.href = `http://m.yanghuolife.com/WeiXin/WXLogin?ReturnUrl=${returnurl}/#/${routers.location.state.target}`;
+                    document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}/#/${routers.location.state.target}`;
                 }
-                document.location.href = `http://m.yanghuolife.com/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
-            }*/
+                document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
+            }
             let path=routers.location.pathname;
             _hmt.push(['_trackPageview', `/m/#/${path}`]);
             callback();

@@ -12,6 +12,7 @@ import client from "utility/rest-client.jsx";
 import appConfig from "config/app.config.json";
 import Loading from "components/loading.jsx";
 import ConfirmBox from "components/confirmbox.jsx"
+import AuthService from "service/auth.service.jsx";
 import * as handler from "utility/handler.jsx";
 import reactCookie from "utility/react-cookie.js";
 
@@ -254,7 +255,35 @@ ReactDOM.render(
         <Route path="/"
                component={App}
                getChildRoutes={getChildRoutes}>
-            <IndexRoute getComponent={
+            <IndexRoute onEnter={
+                (nextState,replace)=>{
+                    let returnurl=appConfig.mhost;
+                    let openid = window.reactCookie.load("match.weixin.openid");
+                    if (handler.default.isWechat&&(Object.is(openid,undefined)||Object.is(openid,null)||Object.is(openid,""))) {
+                        let reqCode;
+                        let query = window.location.search.substring(1);
+                        if(query !==""){
+                            let vars = query.split("&");
+                            for (let i=0;i<vars.length;i++) {
+                                let pair = vars[i].split("=");
+                                if(pair[0] === 'code'){
+                                    reqCode=pair[1];
+                                }
+                            }
+                        }
+                        if(Object.is(reqCode,undefined) || Object.is(reqCode,"")||Object.is(reqCode,null)){
+                            document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
+                        }else {
+                            AuthService.weixinLoginBack(reqCode,`${returnurl}/?code=${reqCode}`);
+                        }
+                        // if(!Object.is(routers.location.state,null)&&!Object.is(routers.location.state.target,undefined)&&!Object.is(routers.location.state.target,null)&&!Object.is(routers.location.state.target,""))
+                        // {
+                        //     document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}/#/${routers.location.state.target}`;
+                        // }
+                    }
+                }
+            }
+                        getComponent={
 				(nextState,callback)=>{
 					require.ensure([],(require)=>{
 						callback(null,require("pages/index.jsx").default);

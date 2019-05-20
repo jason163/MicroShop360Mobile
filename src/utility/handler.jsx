@@ -62,5 +62,6 @@ export {
 	,getPageTransitionName
 	,isOnline
 	,runtime
+	,clientType
 };
 export default new clientType()

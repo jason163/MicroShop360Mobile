@@ -52,7 +52,7 @@ export default class Thankyou extends React.Component {
                 },
                 function (res) {
                     if (res.err_msg === "get_brand_wcpay_request:ok") {
-                        window.location.reload();
+                        window.location.href="/mine/orderlist";
                     } else {
                         throwError(res.err_msg);
                     }
@@ -85,6 +85,7 @@ export default class Thankyou extends React.Component {
                 msg: ret.code,
                 buttons: ['确定']
             });
+            window.location.href="/mine/orderlist";
         });
     }
 

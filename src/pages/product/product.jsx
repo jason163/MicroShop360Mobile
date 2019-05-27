@@ -6,9 +6,10 @@ import {ProDetailHeader,ProDetailTitle,
     ProPropertyGroupPanel,ProDetailFooter,ProTabLayout,
     ProTabContent,ProCommentList} from "bm/product-common.jsx"
 import OrderService from "service/order.service.jsx";
-import TipBox from "components/tipsbox.jsx"
-import Loading from "components/loading.jsx"
-import {getCache,setCache} from "utility/storage.jsx"
+import TipBox from "components/tipsbox.jsx";
+import Loading from "components/loading.jsx";
+import {getCache,setCache} from "utility/storage.jsx";
+import wxShare from "utility/wx-share.jsx";
 require("assets/css/base.css");
 require("assets/css/product.css");
 
@@ -99,8 +100,8 @@ export default class ProductPage extends React.Component {
                 if(rst.Data.SysNo > 0){
                     this.setState({productData: rst.Data});
 
-                    let summary = `欢迎抢购 -> ${data.ProductName} !`
-                    let shareInfo = {feed_id:sysNo,title:data.ProductName,Desc:summary,img_share:data.DefaultImage,redirectUrl:location.href};
+                    let summary = `欢迎抢购 -> ${rst.Data.ProductName} !`
+                    let shareInfo = {feed_id:rst.Data.SysNo,title:rst.Data.ProductName,Desc:summary,img_share:rst.Data.DefaultImage,redirectUrl:location.href};
                     wxShare(shareInfo,function () {
 
                     })

@@ -28,10 +28,10 @@ class itemList extends React.Component {
         <li className="haveimg">
             <div onClick={()=>{
 						this.context.router.push({
-                                     pathname: `/infodetail`,
-                                     state: {
-                                         sysNo:this.props.data.SysNo
-                                     }
+                                     pathname: `/infodetail/${this.props.data.SysNo}`
+                                     // state: {
+                                     //     sysNo:this.props.data.SysNo
+                                     // }
                                  });
 					} }>
                  <div className="text">

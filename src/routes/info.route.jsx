@@ -16,7 +16,7 @@ export default {
                 });
             }
         },{
-            path:"infodetail"
+            path:"infodetail/:id"
             ,onEnter(routers,replace,callback){
                 let path=routers.location.pathname;
                 _hmt.push(['_trackPageview', `/m/#/${path}`]);

@@ -98,6 +98,13 @@ export default class ProductPage extends React.Component {
             if(rst.Success) {
                 if(rst.Data.SysNo > 0){
                     this.setState({productData: rst.Data});
+
+                    let summary = `欢迎抢购 -> ${data.ProductName} !`
+                    let shareInfo = {feed_id:sysNo,title:data.ProductName,Desc:summary,img_share:data.DefaultImage,redirectUrl:location.href};
+                    wxShare(shareInfo,function () {
+
+                    })
+
                     this.bindScrollEvent();
                     if(changePath === 1){
                         /*浏览历史不会新增记录*/

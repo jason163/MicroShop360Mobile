@@ -2,6 +2,8 @@ import PageLayout from "components/page-layout.jsx";
 import {Header, Content} from "components/header.jsx";
 import InfoService from "service/info.service.jsx";
 import PageListView from "components/page-list-view.jsx";
+import wxShare from "utility/wx-share.jsx";
+
 
 require("assets/css/article.css");
 export class infoDetail extends React.Component {
@@ -21,18 +23,25 @@ export class infoDetail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sysNo: this.props.location.state.sysNo
+            sysNo: this.props.params.id
             , helperData: {}
         }
     }
 
     componentDidMount() {
         let sysNo = this.state.sysNo;
+
         InfoService.getHelperDetail(sysNo).then((data)=> {
             let newState = Object.assign({}, this.state);
             newState.helperData = data;
             this.setState(newState);
+            let imgShare = `http://image.great-land.net/${data.DefaultImage}`
+            let shareInfo = {feed_id:sysNo,title:data.Title,Desc:data.Summary,img_share:imgShare,redirectUrl:location.href};
+            wxShare(shareInfo,function () {
+
+            })
         });
+
     }
     render() {
         return(

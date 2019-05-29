@@ -34,7 +34,7 @@ export class infoDetail extends React.Component {
             let newState = Object.assign({}, this.state);
             newState.helperData = data;
             this.setState(newState);
-            // weixin share for ci
+            // weixin share for ci 1
             let imgShare = `http://image.great-land.net/${data.DefaultImage}`
             let shareInfo = {feed_id:sysNo,title:data.Title,Desc:data.Summary,img_share:imgShare,redirectUrl:location.href};
             wxShare(shareInfo,function () {

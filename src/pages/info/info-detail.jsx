@@ -30,11 +30,11 @@ export class infoDetail extends React.Component {
 
     componentDidMount() {
         let sysNo = this.state.sysNo;
-
         InfoService.getHelperDetail(sysNo).then((data)=> {
             let newState = Object.assign({}, this.state);
             newState.helperData = data;
             this.setState(newState);
+            // weixin share
             let imgShare = `http://image.great-land.net/${data.DefaultImage}`
             let shareInfo = {feed_id:sysNo,title:data.Title,Desc:data.Summary,img_share:imgShare,redirectUrl:location.href};
             wxShare(shareInfo,function () {

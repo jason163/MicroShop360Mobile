@@ -31,7 +31,7 @@ let isFirst = ()=> {
 };
 
 hashHistory.listen((location)=> {
-    // console.log("hash history change : ",location);
+    console.log("hash history change : ",location);
     client.resetRequestQueue(location.pathname);
     if (location.action === "PUSH") {
         routeStateManager.setPreviousState(location.state);

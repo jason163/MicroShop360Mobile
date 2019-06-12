@@ -86,7 +86,6 @@ class Auth {
                     cache.setCache("match.weixin.openid", openid);
                     window.reactCookie.save("match.weixin.openid",openid,{ path: '/', maxAge: 3600 * 24 * 30 });
                 }
-                return true;
             }
         });
     }

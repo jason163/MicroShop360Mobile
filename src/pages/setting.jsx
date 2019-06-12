@@ -1,6 +1,7 @@
 import PageLayout from "components/page-layout.jsx";
 import {Header, Content} from "components/header.jsx";
 import authService from "service/auth.service.jsx";
+import * as handler from "utility/handler.jsx";
 
 require("assets/css/base.css");
 require("assets/css/account.css");
@@ -35,6 +36,7 @@ export class Setting extends React.Component {
                                 <span>修改密码</span>
                             </a>
                         </div>
+                        {!handler.default.isWechat &&
                         <div className="box-line-b">
                             <a className="c_list clearFix" onClick={()=> {
             authService.logout();
@@ -42,7 +44,7 @@ export class Setting extends React.Component {
         }}>
                                 <span>退出账号</span>
                             </a>
-                        </div>
+                        </div>}
                     </div>
                 </section>
             </PageLayout>

@@ -1,6 +1,7 @@
 import client from "utility/rest-client.jsx";
 import * as cache from "utility/storage.jsx";
 import keys from "config/keys.config.json";
+import appConfig from "config/app.config.json";
 import strings from "config/strings.config.json";
 import validation from "config/validation.config.jsx";
 import clinetType from "utility/handler.jsx";
@@ -91,7 +92,6 @@ class Auth {
     }
 
     logout() {
-        debugger;
         cache.removeCache(keys.token);
         cache.removeSessionCache(keys.tabPageActive);
         cache.removeSessionCache(keys.previousRoutePathname);

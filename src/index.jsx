@@ -278,7 +278,9 @@ ReactDOM.render(
                                 AuthService.weixinLoginBack(reqCode,`${returnurl}/?code=${reqCode}`);
                             }
                         }else{
-                            AuthService.weixinLoginByOpenId(openid);
+                            if(!AuthService.isLogin()){
+                                AuthService.weixinLoginByOpenId(openid);
+                            }
                         }
                     }
                 }

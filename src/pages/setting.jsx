@@ -36,7 +36,7 @@ export class Setting extends React.Component {
                                 <span>修改密码</span>
                             </a>
                         </div>
-                        {!handler.default.isWechat &&
+                        {handler.default.isWechat &&
                         <div className="box-line-b">
                             <a className="c_list clearFix" onClick={()=> {
             authService.logout();

@@ -70,9 +70,6 @@ class Auth {
             if (res.body.Success) {
                 //登录成功后清除之前的用于判断是否是认证用户的缓存
                 cache.removeCache(keys.isWorker);
-                alert(res.body.Data.Token);
-                alert(res.body.Data.OpenID);
-
                 let token = res.headers[keys.cookieName.toLowerCase()];
                 if (!token) {
                     token = res.body.Data.Token;
@@ -83,12 +80,6 @@ class Auth {
                 else {
                     throwError(strings.invalidToken)
                 }
-
-                cache.removeCache(keys.isWorker);
-                // let token = res.headers[keys.cookieName.toLowerCase()];
-                // if(!token){
-                //     token = res.body.Data.Token;
-                // }
                 let openid = res.body.Data.OpenID;
                 if(openid){
                     cache.setCache("match.weixin.openid", openid);
@@ -96,10 +87,6 @@ class Auth {
                 }
                 return true;
             }
-            // console.log(token);
-            // window._token_=token;
-            //save token
-            return null;
         });
     }
 

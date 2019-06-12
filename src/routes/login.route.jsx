@@ -33,6 +33,7 @@ export default {
                 }else {
                     AuthService.weixinLoginBack(reqCode,`${returnurl}/?code=${reqCode}`);
                 }
+                window.location.href=appConfig.mhost;
             }
             let path=routers.location.pathname;
             _hmt.push(['_trackPageview', `/m/#/${path}`]);

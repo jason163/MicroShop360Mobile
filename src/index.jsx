@@ -258,7 +258,7 @@ ReactDOM.render(
             <IndexRoute onEnter={
                 (nextState,replace)=>{
                     let returnurl=appConfig.mhost;
-                    let openid = window.reactCookie.load("match.weixin.openid");
+                    let openid = "";// window.reactCookie.load("match.weixin.openid");
                     if (handler.default.isWechat&&(Object.is(openid,undefined)||Object.is(openid,null)||Object.is(openid,""))) {
                         let reqCode;
                         let query = window.location.search.substring(1);

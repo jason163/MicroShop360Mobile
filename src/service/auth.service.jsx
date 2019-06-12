@@ -87,6 +87,7 @@ class Auth {
                     window.reactCookie.save("match.weixin.openid",openid,{ path: '/', maxAge: 3600 * 24 * 30 });
                 }
             }
+            window.location.reload();
         });
     }
     //
@@ -111,6 +112,7 @@ class Auth {
                     window.reactCookie.save("match.weixin.openid",openid,{ path: '/', maxAge: 3600 * 24 * 30 });
                 }
             }
+            window.location.reload();
         });
     }
 

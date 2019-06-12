@@ -258,23 +258,27 @@ ReactDOM.render(
             <IndexRoute onEnter={
                 (nextState,replace)=>{
                     let returnurl=appConfig.mhost;
-                    let openid = "";// window.reactCookie.load("match.weixin.openid");
-                    if (handler.default.isWechat&&(Object.is(openid,undefined)||Object.is(openid,null)||Object.is(openid,""))) {
-                        let reqCode;
-                        let query = window.location.search.substring(1);
-                        if(query !==""){
-                            let vars = query.split("&");
-                            for (let i=0;i<vars.length;i++) {
-                                let pair = vars[i].split("=");
-                                if(pair[0] === 'code'){
-                                    reqCode=pair[1];
+                    let openid = window.reactCookie.load("match.weixin.openid");
+                    if(handler.default.isWechat){
+                        if(Object.is(openid,undefined)||Object.is(openid,null)||Object.is(openid,"")){
+                            let reqCode;
+                            let query = window.location.search.substring(1);
+                            if(query !==""){
+                                let vars = query.split("&");
+                                for (let i=0;i<vars.length;i++) {
+                                    let pair = vars[i].split("=");
+                                    if(pair[0] === 'code'){
+                                        reqCode=pair[1];
+                                    }
                                 }
                             }
-                        }
-                        if(Object.is(reqCode,undefined) || Object.is(reqCode,"")||Object.is(reqCode,null)){
-                            document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
-                        }else {
-                            AuthService.weixinLoginBack(reqCode,`${returnurl}/?code=${reqCode}`);
+                            if(Object.is(reqCode,undefined) || Object.is(reqCode,"")||Object.is(reqCode,null)){
+                                document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
+                            }else {
+                                AuthService.weixinLoginBack(reqCode,`${returnurl}/?code=${reqCode}`);
+                            }
+                        }else{
+                            AuthService.weixinLoginByOpenId(openid);
                         }
                     }
                 }

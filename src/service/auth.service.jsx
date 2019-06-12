@@ -89,6 +89,30 @@ class Auth {
             }
         });
     }
+    //
+    weixinLoginByOpenId(openId){
+        return client.post(`/WeiXin/WXLoginByOpenID`,{openId}).then((res)=> {
+            if (res.body.Success) {
+                //登录成功后清除之前的用于判断是否是认证用户的缓存
+                cache.removeCache(keys.isWorker);
+                let token = res.headers[keys.cookieName.toLowerCase()];
+                if (!token) {
+                    token = res.body.Data.Token;
+                }
+                if (token) {
+                    cache.setCache(keys.token, token);
+                }
+                else {
+                    throwError(strings.invalidToken)
+                }
+                let openid = res.body.Data.OpenID;
+                if(openid){
+                    cache.setCache("match.weixin.openid", openid);
+                    window.reactCookie.save("match.weixin.openid",openid,{ path: '/', maxAge: 3600 * 24 * 30 });
+                }
+            }
+        });
+    }
 
     logout() {
         cache.removeCache(keys.token);

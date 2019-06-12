@@ -14,37 +14,37 @@ export default {
         {
             path: "login"
             , onEnter(routers, replace, callback){
-            let returnurl=appConfig.mhost;
-            let openid = window.reactCookie.load("match.weixin.openid");
-            if (clinetType.isWechat&&(Object.is(openid,undefined)||Object.is(openid,null)||Object.is(openid,""))){
-                let reqCode;
-                let query = window.location.search.substring(1);
-                if(query !==""){
-                    let vars = query.split("&");
-                    for (let i=0;i<vars.length;i++) {
-                        let pair = vars[i].split("=");
-                        if(pair[0] === 'code'){
-                            reqCode=pair[1];
-                        }
-                    }
-                }
-                if(Object.is(reqCode,undefined) || Object.is(reqCode,"")||Object.is(reqCode,null)){
-                    document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
-                }else {
-                    AuthService.weixinLoginBack(reqCode,`${returnurl}/?code=${reqCode}`);
-                }
-
-                let location=routes.location;
-                replace({
-                    pathname:"/",
-                    state:{
-                        target:location.pathname
-                    }
-                });
-                let path=location.pathname;
-                _hmt.push(['_trackPageview', `/m/#/${path}`]);
-                callback();
-            }
+            // let returnurl=appConfig.mhost;
+            // let openid = window.reactCookie.load("match.weixin.openid");
+            // if (clinetType.isWechat&&(Object.is(openid,undefined)||Object.is(openid,null)||Object.is(openid,""))){
+            //     let reqCode;
+            //     let query = window.location.search.substring(1);
+            //     if(query !==""){
+            //         let vars = query.split("&");
+            //         for (let i=0;i<vars.length;i++) {
+            //             let pair = vars[i].split("=");
+            //             if(pair[0] === 'code'){
+            //                 reqCode=pair[1];
+            //             }
+            //         }
+            //     }
+            //     if(Object.is(reqCode,undefined) || Object.is(reqCode,"")||Object.is(reqCode,null)){
+            //         document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
+            //     }else {
+            //         AuthService.weixinLoginBack(reqCode,`${returnurl}/?code=${reqCode}`);
+            //     }
+            //
+            //     let location=routes.location;
+            //     replace({
+            //         pathname:"/",
+            //         state:{
+            //             target:location.pathname
+            //         }
+            //     });
+            //     let path=location.pathname;
+            //     _hmt.push(['_trackPageview', `/m/#/${path}`]);
+            //     callback();
+            // }
             let path=routers.location.pathname;
             _hmt.push(['_trackPageview', `/m/#/${path}`]);
             callback();

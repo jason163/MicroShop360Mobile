@@ -4,7 +4,7 @@ import wx from 'weixin-js-sdk';
 const wxShare = function (json={},callback) {
 
     let signUrl = window.location.href.split('#')[0];
-    let linkUrl = `http://appsvc.great-land.net/m/wxShare.html?beautyRedirect=${encodeURIComponent(json.redirectUrl)}`
+    let linkUrl = `https://m.great-land.net/wxShare.html?beautyRedirect=${encodeURIComponent(json.redirectUrl)}`
 
     let {feed_id,title,Desc,img_share}=json;
     let shareTitle = title || '四季美';

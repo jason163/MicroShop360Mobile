@@ -11,7 +11,7 @@ const wxShare = function (json={},callback) {
     let shareDesc = Desc;
     let shareImg = img_share || require('../assets/img/logo.png');
     client.get(`WeiXin/GetJSSDKConfig?url=${signUrl}`).then((res)=>{
-
+alert(linkUrl);
         wx.config({
             debug:false,
             appId: res.body.Data.AppID,

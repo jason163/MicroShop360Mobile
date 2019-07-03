@@ -7,7 +7,7 @@ const wxShare = function (json={},callback) {
     let linkUrl = `https://m.great-land.net/wxShare.html?beautyRedirect=${encodeURIComponent(json.redirectUrl)}`
 
     let {feed_id,title,Desc,img_share}=json;
-    let shareTitle = title || '四季美';
+    let shareTitle = title || '讯驰商城';
     let shareDesc = Desc;
     let shareImg = img_share || require('../assets/img/logo.png');
     client.get(`WeiXin/GetJSSDKConfig?url=${signUrl}`).then((res)=>{

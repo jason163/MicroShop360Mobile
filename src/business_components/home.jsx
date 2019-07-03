@@ -55,7 +55,7 @@ class HomeHeader extends React.Component {
         return (
             <section id="main_header">
                 <div className="layout">
-                    <div className="logo"><a><img src={require("assets/img/logo.png")} alt="四季美微商城"/></a></div>
+                    <div className="logo"><a><img src={require("assets/img/logo.png")} alt="讯驰商城微商城"/></a></div>
                     <div className="search">
                         <form onSubmit={()=>{
                             this.searchKeyword();

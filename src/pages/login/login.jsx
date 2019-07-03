@@ -35,7 +35,7 @@ export default class Login extends React.Component {
     render() {
         return (
             <PageLayout>
-                <Header>登录四季美</Header>
+                <Header>登录讯驰商城</Header>
                 <section className="loginBox form mt16">
                     <p className={classNames({"validFail":this.state.submited&&this.state.formData.tel===""})}><input
                         type="tel"

@@ -259,7 +259,8 @@ ReactDOM.render(
                 (nextState,replace)=>{
                     let returnurl=appConfig.mhost;
                     let openid = window.reactCookie.load("match.weixin.openid");
-                    if(handler.default.isWechat){
+                    if(false){
+                        // if(handler.default.isWechat){
                         if(Object.is(openid,undefined)||Object.is(openid,null)||Object.is(openid,"")){
                             let reqCode;
                             let query = window.location.search.substring(1);
@@ -273,7 +274,7 @@ ReactDOM.render(
                                 }
                             }
                             if(Object.is(reqCode,undefined) || Object.is(reqCode,"")||Object.is(reqCode,null)){
-                                document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
+                                document.location.href = `${appConfig.apihost}WeiXin/WXLogin?ReturnUrl=${returnurl}`;
                             }else {
                                 AuthService.weixinLoginBack(reqCode,`${returnurl}/?code=${reqCode}`);
                             }

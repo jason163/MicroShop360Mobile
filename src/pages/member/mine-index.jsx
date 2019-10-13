@@ -179,20 +179,20 @@ export class MineIndex extends React.Component {
                                 {/*<div className="c_list_right"><span className="colorGrey c_arrow_r"></span></div>*/}
                             {/*</Link>*/}
                         {/*</div>*/}
-                        <div className="box-line-b">
-                            <Link to="/mine/consumList" className="c_list clearFix">
-                                <div className="c_list_left c_icon c_icon_realname"><span>我的消费记录</span></div>
-                                <div className="c_list_right"><span className="colorGrey c_arrow_r"></span></div>
-                            </Link>
-                        </div>
+                        {/*<div className="box-line-b">*/}
+                            {/*<Link to="/mine/consumList" className="c_list clearFix">*/}
+                                {/*<div className="c_list_left c_icon c_icon_realname"><span>我的消费记录</span></div>*/}
+                                {/*<div className="c_list_right"><span className="colorGrey c_arrow_r"></span></div>*/}
+                            {/*</Link>*/}
+                        {/*</div>*/}
                     </div>
                     <div className="centerper_item">
-                        <div className="box-line-b box-line-t">
-                            <Link to="/mine/reservationRecordsList" className="c_list clearFix">
-                                <div className="c_list_left c_icon c_icon_realname"><span>预约记录</span></div>
-                                <div className="c_list_right"><span className="colorGrey c_arrow_r"></span></div>
-                            </Link>
-                        </div>
+                        {/*<div className="box-line-b box-line-t">*/}
+                            {/*<Link to="/mine/reservationRecordsList" className="c_list clearFix">*/}
+                                {/*<div className="c_list_left c_icon c_icon_realname"><span>预约记录</span></div>*/}
+                                {/*<div className="c_list_right"><span className="colorGrey c_arrow_r"></span></div>*/}
+                            {/*</Link>*/}
+                        {/*</div>*/}
                         <div className="box-line-b">
                             <Link to="/helperList" className="c_list clearFix">
                                 <div className="c_list_left c_icon c_icon_shopguide"><span>购物指南</span></div>

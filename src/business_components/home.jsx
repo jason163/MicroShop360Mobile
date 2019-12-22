@@ -253,8 +253,8 @@ class HomeSingleBanner extends React.Component {
             data: React.PropTypes.object
         }
     }
-
     render() {
+        debugger
         let bannerLinkUrl = Object.is(this.props.data, null) ? "" : this.props.data.BannerLinkUrl;
         let bannerSrcUrl = Object.is(this.props.data, null) ? "" : this.props.data.BannerSrcUrl;
         return (
@@ -299,7 +299,7 @@ class HomeMutipleBanner extends React.Component {
     }
 }
 
-export default class Home extends React.Component {
+class Home extends React.Component {
 
     constructor(props) {
         super(props);
@@ -465,3 +465,5 @@ export default class Home extends React.Component {
         );
     }
 }
+
+export {HomeSingleBanner,Home}

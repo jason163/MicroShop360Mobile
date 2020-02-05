@@ -10,7 +10,6 @@ export default (location, callback)=> {
                 , require("routes/promotion.route.jsx").default
                 , require("routes/other.route.jsx").default
                 , require("routes/info.route.jsx").default
-                , require("routes/activity.route.jsx").default
                 , require("routes/404.route.jsx").default
             ]);
     });

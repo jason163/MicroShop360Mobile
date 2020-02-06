@@ -30,18 +30,18 @@ export default class IndexPage extends React.Component {
             <PageLayout isHome={1} isIndex={1}>
                 <Content>
                     <TabPageLayout isHome={true} tabs={[{
-				iconClassName:'a1'
-				,text:''
-			},{
-				iconClassName:'a2'
-				,text:''
-			},{
-				iconClassName:'a3',
-				text:this.state.ShoppingCartProductCount
-			},{
-				iconClassName:'a4',
-				text:''
-			}]} ref="tab_page_layout">
+                        iconClassName:'a1'
+                        ,text:''
+                    },{
+                        iconClassName:'a2'
+                        ,text:''
+                    },{
+                        iconClassName:'a3',
+                        text:this.state.ShoppingCartProductCount
+                    },{
+                        iconClassName:'a4',
+                        text:''
+                    }]} ref="tab_page_layout">
                         <TabPageContent zIndex={10} eleId="tab_home">
                             <Home></Home>
                         </TabPageContent>
@@ -53,7 +53,9 @@ export default class IndexPage extends React.Component {
                         <TabPageContent eleId="tab_shopping">
                             <ShoppingCart IsSamePageWithIndex={true} goBackCallback={()=>{
                                 this.refs.tab_page_layout.ActiveFirstTab();
-                            }} refreshShoppingCartCount={()=>{this.setState({ShoppingCartProductCount: OrderService.getShoppingCartProductCount()});}}></ShoppingCart>
+                            }} refreshShoppingCartCount={()=>{this.setState({ShoppingCartProductCount: OrderService.getShoppingCartProductCount()});}}>
+
+                            </ShoppingCart>
                         </TabPageContent>
                         <TabPageContent eleId="tab_mine">
                             <MineIndex IsSamePageWithIndex={true} loginCallback={()=>{

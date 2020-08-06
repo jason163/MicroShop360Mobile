@@ -4,6 +4,7 @@ import OrderDetailService from "service/orderdetail.service.jsx";
 import clientType from "utility/handler.jsx";
 import * as cache from "utility/storage.jsx";
 import keys from "config/keys.config.json";
+import appConfig from "config/app.config.json";
 import RouteStateManager from "utility/route-state-manager.jsx";
 
 require("assets/css/base.css");
@@ -109,6 +110,7 @@ export default class Thankyou extends React.Component {
         let soSysNo=this.props.params.sosysno;
         let token=cache.getCache(keys.token);
         OrderDetailService.updateOrderPayType(soSysNo,payTypeID).then((res)=>{
+            console.log('callback success')
            if(res){
                // if(true){
                //     OrderDetailService.callOnlinePay(soSysNo).then((wechatres)=>{
@@ -117,6 +119,7 @@ export default class Thankyou extends React.Component {
                // }
                //is Iphone
                if(clientType.isPhone){
+                   console.log('it is iphone')
                    this.setupWebViewJavascriptBridge(function (bridge) {
                        //bridge.registerHandler('JS Echo', function(data, responseCallback) {
                            //console.log("JS Echo called with:", data);
@@ -144,7 +147,8 @@ export default class Thankyou extends React.Component {
                }
                //is site
                else{
-                   window.location.href=`/order/OnlinePay/${soSysNo}?token=${token}`;
+                  alert("请使用微信或APP下单");
+                   // window.location.href=`${appConfig.apihost}/order/OnlinePay/${soSysNo}?token=${token}`;
                }
            }
        })
@@ -152,10 +156,12 @@ export default class Thankyou extends React.Component {
    }
 
     renderWechatPayType(){
+        alert(clientType.isWechat)
        if(clientType.isWechat)
        {
            return (
                <li className="weixin"><a onClick={()=>{
+                   console.log('you click')
                     this.payClick(111)
                }}>微信支付</a></li>
            )
@@ -169,6 +175,7 @@ export default class Thankyou extends React.Component {
 
             return (
                 <li className="alipay"><a onClick={()=>{
+                    console.log('you click')
                          this.payClick(110)
                 }}>支付宝支付</a></li>
             )

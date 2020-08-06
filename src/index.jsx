@@ -257,7 +257,7 @@ ReactDOM.render(
                getChildRoutes={getChildRoutes}>
             <IndexRoute onEnter={
                 (nextState,replace)=>{
-                    let returnurl=appConfig.mhost;
+                    let returnurl=`https://m.great-land.net`;
                     let openid = window.reactCookie.load("match.weixin.openid");
                     if(handler.default.isWechat){
                         if(Object.is(openid,undefined)||Object.is(openid,null)||Object.is(openid,"")){
@@ -273,7 +273,8 @@ ReactDOM.render(
                                 }
                             }
                             if(Object.is(reqCode,undefined) || Object.is(reqCode,"")||Object.is(reqCode,null)){
-                                document.location.href = `http://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
+                                console.log(`returnrul=${returnurl}`)
+                                document.location.href = `https://appsvc.great-land.net/WeiXin/WXLogin?ReturnUrl=${returnurl}`;
                             }else {
                                 AuthService.weixinLoginBack(reqCode,`${returnurl}/?code=${reqCode}`);
                             }

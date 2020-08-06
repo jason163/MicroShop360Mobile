@@ -186,6 +186,7 @@ export default class Thankyou extends React.Component {
                     <ul>
                     <li className="amount box-line-t"><b className="fl">订单:<span className="blue">{this.state.order.SysNo}</span>金额</b><b className="colorRed fr">￥{this.state.order.RechargeAmount}</b></li>
                         {this.renderAliPayType()}
+                        {this.renderWechatPayType()}
                     </ul>
                     </section>
             </PageLayout>

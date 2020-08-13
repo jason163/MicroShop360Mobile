@@ -30,7 +30,7 @@ class rechargeList extends React.Component {
             <li className="box-line-t box-line-b">
                 <div onClick={()=>{
                  if(this.props.data.RechargeStatus===0) {
-						this.context.router.push(`/recharge/${this.props.data.SysNo}`)                                    
+						this.context.router.push(`/recharge/${this.props.data.SysNo}`)
                                  }
                         else {
                         showMessage("该充值单状态不是未支付！");

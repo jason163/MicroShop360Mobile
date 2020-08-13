@@ -4,11 +4,12 @@ import OrderDetailService from "service/orderdetail.service.jsx";
 import clientType from "utility/handler.jsx";
 import * as cache from "utility/storage.jsx";
 import keys from "config/keys.config.json";
+import appConfig from "config/app.config.json";
 import RouteStateManager from "utility/route-state-manager.jsx";
 
 require("assets/css/base.css");
 require("assets/css/shopping.css");
-export default class Thankyou extends React.Component {
+export default class Recharge extends React.Component {
     constructor(props) {
       super(props);
         this.WXPayDATA=[];
@@ -52,7 +53,7 @@ export default class Thankyou extends React.Component {
                 },
                 function (res) {
                     if (res.err_msg === "get_brand_wcpay_request:ok") {
-                        window.location.reload();
+                        window.location.href="/mine/rechargeList";
                     } else {
                         throwError(res.err_msg);
                     }
@@ -95,66 +96,59 @@ export default class Thankyou extends React.Component {
         let soSysNo=this.props.params.sosysno;
         let token=cache.getCache(keys.token);
         OrderDetailService.updateRechargePayType(soSysNo,payTypeID).then((res)=>{
-           if(res){
-               //is Iphone
-               if(clientType.isPhone){
-                   this.setupWebViewJavascriptBridge(function (bridge) {
-                       //bridge.registerHandler('JS Echo', function(data, responseCallback) {
-                           //console.log("JS Echo called with:", data);
-                           //responseCallback(data);
-                       //});
-                       bridge.callHandler('PayObjc', {'soSysNo':soSysNo,'payTypeId':payTypeID,'token':token,'successUrl':`/paysuccess/${soSysNo}`}, function responseCallback(responseData) {
-                       });
-                   });
-               }
-               //is Android
-              else if(clientType.isAndorid) {
-                   try {
-                       window.jsPayObj.pay(payTypeID.toString(), soSysNo.toString(),token,`/paysuccess/${soSysNo}`);
-                   }
-                   catch(ex) {
+            if(res){
+                //is Iphone
+                if(clientType.isPhone){
+                    console.log('it is iphone')
+                    this.setupWebViewJavascriptBridge(function (bridge) {
+                        //bridge.registerHandler('JS Echo', function(data, responseCallback) {
+                        //console.log("JS Echo called with:", data);
+                        //responseCallback(data);
+                        //});
+                        bridge.callHandler('PayObjc', {'soSysNo':soSysNo,'payTypeId':payTypeID,'token':token,'successUrl':`/paysuccess/${soSysNo}`}, function responseCallback(responseData) {
+                            console.log("JS received response:", responseData);
+                        });
+                    });
+                }
+                //is Android
+                else if(clientType.isAndorid) {
+                    try {
+                        window.jsPayObj.pay(payTypeID.toString(), soSysNo.toString(),token,`/paysuccess/${soSysNo}`);
+                    }
+                    catch(ex) {
                         throwError(ex.message);
-                   }
-               }
-               //is wechat
-              else if(clientType.isWechat){
-                   OrderDetailService.callWechatRechargePay(soSysNo).then((wechatres)=>{
-                       this.wxjspay(wechatres.Data);
-                   })
-               }
-               //is site
-               else{
-                   window.location.href=`/order/OnlinePay/${soSysNo}?token=${token}`;
-               }
-           }
+                    }
+                }
+                //is wechat
+                else if(clientType.isWechat){
+                    console.log('is wechat')
+                    OrderDetailService.callWechatRechargePay(soSysNo).then((wechatres)=>{
+                        this.wxjspay(wechatres.Data);
+                    })
+                }
+                //is site
+                else{
+                    alert("请使用微信或APP下单");
+                    // window.location.href=`${appConfig.apihost}/order/OnlinePay/${soSysNo}?token=${token}`;
+                }
+            }
        })
 
    }
 
     renderWechatPayType(){
-       if(clientType.isWechat||clientType.isPhone||clientType.isAndorid )
-       {
-           return (
-               <li className="weixin"><a onClick={()=>{
-                    this.payClick(111)
-               }}>微信支付</a></li>
-           )
-       }
-       return null
-
-   }
-
-    renderAliPayType() {
-        if(!clientType.isWechat){
-
+        console.log(clientType.isWechat)
+        if(clientType.isWechat)
+        {
             return (
-                <li className="alipay"><a onClick={()=>{
-                         this.payClick(110)
-                }}>支付宝支付</a></li>
+                <li className="weixin"><a onClick={()=>{
+                    this.payClick(111)
+                }}>微信支付</a></li>
             )
         }
-        return null;
-    }
+        return null
+   }
+
 
     componentDidMount() {
         //RouteStateManager.setPreviousPathname("/shoppingcart");
@@ -167,25 +161,18 @@ export default class Thankyou extends React.Component {
         RouteStateManager.setPreviousPathname("/recharge");
     }
 
-    //componentWillMount(){
-    //    this.context.router.setRouteLeaveHook(
-    //        this.context.route,
-    //        this.routeWillLeave
-    //    )
-    //}
-
-    //routeWillLeave(nextLocation){
-    //    RouteStateManager.setPreviousPathname("/mine/orderlist");
-    //}
-
     render() {
         return (
             <PageLayout>
                 <Header onGoBack={()=>{ this.context.router.go(-this.state.backStep)}}>选择支付方式</Header>
                 <section className="payment">
                     <ul>
-                    <li className="amount box-line-t"><b className="fl">订单:<span className="blue">{this.state.order.SysNo}</span>金额</b><b className="colorRed fr">￥{this.state.order.RechargeAmount}</b></li>
-                        {this.renderAliPayType()}
+                    <li className="amount box-line-t"><b className="fl">订单:
+                        <span className="blue" onClick={()=>{
+                            this.context.router.push({
+                                pathname: `/mine/rechargeList`
+                            });
+                            }}>{this.state.order.SysNo}</span>金额</b><b className="colorRed fr">￥{this.state.order.RechargeAmount}</b></li>
                         {this.renderWechatPayType()}
                     </ul>
                     </section>

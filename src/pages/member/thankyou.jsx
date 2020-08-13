@@ -112,11 +112,6 @@ export default class Thankyou extends React.Component {
         OrderDetailService.updateOrderPayType(soSysNo,payTypeID).then((res)=>{
             console.log('callback success')
            if(res){
-               // if(true){
-               //     OrderDetailService.callOnlinePay(soSysNo).then((wechatres)=>{
-               //         this.apiCloudPay(wechatres.Data);
-               //     })
-               // }
                //is Iphone
                if(clientType.isPhone){
                    console.log('it is iphone')
@@ -156,7 +151,6 @@ export default class Thankyou extends React.Component {
    }
 
     renderWechatPayType(){
-        alert(clientType.isWechat)
        if(clientType.isWechat)
        {
            return (
@@ -234,7 +228,7 @@ export default class Thankyou extends React.Component {
                      this.context.router.push({
                                 pathname: `/mine/orderdetail/${this.state.order.SysNo}`
                             });
-                    }}>{this.state.order.SysNo}</span>）金额</b><b className="colorRed fr">￥{this.state.order.CashPayAbleAmount}</b></li>
+                    }}>{this.state.order.SysNo}</span>）金额</b><b className="colorRed fr">￥{this.state.order.CashPayAbleAmount}{this.state.order.RechargeAmount}</b></li>
                         {this.renderWechatPayType()}
                         {this.renderAliPayType()}
                     </ul>

@@ -50,7 +50,7 @@
     "image-webpack-loader": "^1.7.0",
     "json-loader": "^0.5.4",
     "jszip": "^3.0.0",
-    "node-sass": "^3.4.2",
+    "node-sass": "^7.0.0",
     "nodemailer": "^0.7.1",
     "postcss-loader": "^0.8.2",
     "q": "^1.4.1",
